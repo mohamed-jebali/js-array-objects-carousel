@@ -46,14 +46,20 @@ const images = [
 ];
 
 
-let carouselContainer = document.querySelector(".image-container");
+let carouselContainer = document.querySelector(".carousel");
 
 console.log(carouselContainer);
 
 images.forEach((imageSrc) => {
-    carouselContainer.innerHTML += `<img src="${imageSrc.image}" alt="">`;
+    carouselContainer.innerHTML += `<div class="carousel-item">
+                                           <img src="${imageSrc.image}" alt="">
+                                     </div>`;
 });
 
+document.querySelectorAll(".carousel-item")[1].classList.add("active");
 
 
+let rightButton = document.querySelector(".previous-button");
+rightButton.addEventListener("click",function (){
 
+});
