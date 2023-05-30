@@ -48,7 +48,8 @@ const images = [
 
 let carouselContainer = document.querySelector(".carousel");
 
-console.log(carouselContainer);
+let activeCarousel = 0;
+
 
 images.forEach((imageSrc) => {
     carouselContainer.innerHTML += `<div class="carousel-item">
@@ -56,10 +57,32 @@ images.forEach((imageSrc) => {
                                      </div>`;
 });
 
-document.querySelectorAll(".carousel-item")[1].classList.add("active");
+document.querySelectorAll(".carousel-item")[activeCarousel].classList.add("active");
 
 
 let rightButton = document.querySelector(".previous-button");
-rightButton.addEventListener("click",function (){
 
+rightButton.addEventListener("click", function () {
+    if (activeCarousel === images.length - 1) {
+        activeCarousel = 0;
+    } else {
+        activeCarousel++;
+    }
+
+    document.querySelector('.carousel-item.active').classList.remove('active');
+    document.querySelectorAll('.carousel-item')[activeCarousel].classList.add('active');
+});
+
+
+let leftButton = document.querySelector(".next-button");
+ 
+leftButton.addEventListener("click", function () {
+    if (activeCarousel === 0) {
+        activeCarousel = images.length - 1;
+    } else {
+        activeCarousel--;
+    }
+
+    document.querySelector('.carousel-item.active').classList.remove('active');
+    document.querySelectorAll('.carousel-item')[activeCarousel].classList.add('active');
 });
