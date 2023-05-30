@@ -46,3 +46,14 @@ const images = [
 ];
 
 
+let carouselContainer = document.querySelector(".image-container");
+
+console.log(carouselContainer);
+
+images.forEach((imageSrc) => {
+    carouselContainer.innerHTML += `<img src="${imageSrc.image}" alt="">`;
+});
+
+
+
+
