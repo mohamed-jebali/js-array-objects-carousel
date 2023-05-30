@@ -19,6 +19,7 @@
     width: 100%;
     object-fit: cover;
     display: block;
+
 }
 
 div.previous-button,div.next-button{
@@ -33,6 +34,7 @@ div.previous-button,div.next-button{
     display: flex;
     cursor: pointer;
     margin: 1rem 0;
+    z-index: 1;
 }
 
 div.previous-button:hover,div.next-button:hover{
@@ -47,4 +49,20 @@ div.next-button{
 div.previous-button i,
 div.next-button i{
     margin: auto;
+}
+
+.text{
+    position: absolute;
+    bottom: 20%;
+    color: white;
+    font-size: 0.75rem;
+    padding: 1rem;
+    width: 45%;
+}
+.title{
+    position: absolute;
+    bottom: 30%;
+    color: white;
+    font-size: 1.3rem;
+    padding: 1rem;
 }

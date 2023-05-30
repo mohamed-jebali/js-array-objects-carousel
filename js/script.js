@@ -54,6 +54,8 @@ let activeCarousel = 0;
 images.forEach((imageSrc) => {
     carouselContainer.innerHTML += `<div class="carousel-item">
                                            <img src="${imageSrc.image}" alt="">
+                                           <h3 class="title"> ${imageSrc.title} </h3>
+                                           <p class="text"> ${imageSrc.text} </p>
                                      </div>`;
 });
 
